@@ -4,35 +4,35 @@ APP PLANNING & DESIGN
 
 1. PROJECT IDEA
 -------------------------
-- What is your app called?
-- What type of app is it? (journal, listings, notes, etc.)
-- What will users use your app for?
+- What is your app called? notely
+- What type of app is it? (journal, listings, notes, etc.) notes app
+- What will users use your app for? noting things down, especially art related notes like sketches
 
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
-- What is a single “entry” in your app?
-- What fields will each entry have? (title, content, date, etc.)
-- How will entries be connected to a user?
+- What is a single “entry” in your app? a file
+- What fields will each entry have? (title, content, date, etc.) title of file
+- How will entries be connected to a user? logging in
 
 3. CORE FEATURES (CRUD)
 -------------------------
-- What can users CREATE?
-- What will they see on the main page (READ)?
-- What can users EDIT (UPDATE)?
-- What can users DELETE?
+- What can users CREATE? notes
+- What will they see on the main page (READ)? the different notes of theirs
+- What can users EDIT (UPDATE)? the info about the notes, and whats on them
+- What can users DELETE? the same things they can add, but they can also completely delete the note
 
 4. USER FLOW
 -------------------------
-- What happens after a user logs in?
-- What pages/routes will your app need? (dashboard, create, edit, etc.)
-- Describe a typical user experience from login → using your app
+- What happens after a user logs in? it shows their notes
+- What pages/routes will your app need? (dashboard, create, edit, etc.) just the notes dashboard and a create/delete notes
+- Describe a typical user experience from login → using your app log in, create or opeen a note/file to work on.
 
 5. USER EXPERIENCE (UX)
 -------------------------
-- How should your app look and feel?
-- How will users navigate between pages?
-- How will entries be displayed (list, cards, etc.)?
+- How should your app look and feel? clean and sterile, uninteresting
+- How will users navigate between pages? opening and closing files
+- How will entries be displayed (list, cards, etc.)? like google drive files
 
 6. OPTIONAL FEATURES
 -------------------------
-- What extra features might you add? (search, tags, sorting, etc.)
+- What extra features might you add? (search, tags, sorting, etc.) search maybe, maybe folders
