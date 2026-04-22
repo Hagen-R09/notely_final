@@ -7,6 +7,7 @@ def seed_database():
 
         conn = get_db
 
+        
     
         sample_entries = [
             ('interesting', 'today was interesting')
