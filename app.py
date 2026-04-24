@@ -76,7 +76,7 @@ def register():
     return render_template("register.html", error=error)
 
 @app.route("/secret")
-def secret():
+def dashboard():
     # TODO: RENAME THIS ROUTE TO /dashboard
 
     if "user" not in session:
