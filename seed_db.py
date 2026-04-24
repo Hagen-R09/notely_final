@@ -20,6 +20,12 @@ def seed_database():
     conn = get_db()
     
     # Sample arists with passwords
+    sample_users = [
+        ("alice", "Password123!"),
+        ("bob", "SecurePass456@"),
+        ("charlie", "MyPassword789#"),
+    ]
+    
     sample_artists = [
         ("alice", "Password123!"),
         ("bob", "SecurePass456@"),
@@ -27,7 +33,7 @@ def seed_database():
     ]
     
     try:
-        for username, password in sample_artists:
+        for username, password in sample_users:
             hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
             conn.execute(
                 "INSERT INTO artists (username, password) VALUES (?, ?)",
