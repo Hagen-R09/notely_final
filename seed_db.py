@@ -27,10 +27,11 @@ def seed_database():
     ]
     
     sample_artists = [
-        ("alice", "Password123!"),
-        ("bob", "SecurePass456@"),
-        ("charlie", "MyPassword789#"),
+          ("alice", "Password123!"),
+          ("bob", "SecurePass456@"),
+          ("charlie", "MyPassword789#"),
     ]
+    
     
     try:
         for username, password in sample_users:
