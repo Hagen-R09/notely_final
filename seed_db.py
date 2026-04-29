@@ -27,9 +27,9 @@ def seed_database():
     ]
     
     sample_artists = [
-          ("alice", "Password123!"),
-          ("bob", "SecurePass456@"),
-          ("charlie", "MyPassword789#"),
+          ("crust", "d1sRockaf00..."),
+          ("gerard", "Xx3ch33r5!xX"),
+          ("bobert", "camu5f@n1"),
     ]
     
     
