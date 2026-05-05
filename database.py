@@ -16,8 +16,8 @@ def init_db():
     """)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS artists (
-            username TEXT PRIMARY KEY,
-            password TEXT
+            name TEXT PRIMARY KEY,
+            word TEXT
         )
     """)
     conn.commit()

@@ -42,13 +42,13 @@ def seed_database():
             )
             print(f"Created users: {username}")
         
-        for username, password in sample_artists:
-            hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+        for name, word in sample_artists:
+            hashed_pw = bcrypt.hashpw(word.encode("utf-8"), bcrypt.gensalt())
             conn.execute(
-                "INSERT INTO artists (username, password) VALUES (?, ?)",
-                (username, hashed_pw)
+                "INSERT INTO artists (name, word) VALUES (?, ?)",
+                (name, hashed_pw)
             )
-            print(f"Created artists: {username}")
+            print(f"Created artists: {name}")
         
         conn.commit()
         print("\nDatabase seeding complete!")
