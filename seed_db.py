@@ -40,14 +40,14 @@ def seed_database():
                 "INSERT INTO users (username, password) VALUES (?, ?)",
                 (username, hashed_pw)
             )
-            print(f"Created users: {username}")
+            print(f"Created user: {username}")
         
         for piecename, work in sample_pieces:
             conn.execute(
                 "INSERT INTO pieces (piecename, work) VALUES (?, ?)",
                 (piecename, work)
             )
-            print(f"Created pieces: {piecename}")
+            print(f"Created piece: {piecename}")
         
         conn.commit()
         print("\nDatabase seeding complete!")
