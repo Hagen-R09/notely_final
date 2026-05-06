@@ -46,7 +46,7 @@ def seed_database():
             hashed_pw = bcrypt.hashpw(work.encode("utf-8"), bcrypt.gensalt())
             conn.execute(
                 "INSERT INTO pieces (piecename, work) VALUES (?, ?)",
-                (name, hashed_pw)
+                (piecename, hashed_pw)
             )
             print(f"Created pieces: {piecename}")
         
