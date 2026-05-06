@@ -26,10 +26,10 @@ def seed_database():
         ("charlie", "MyPassword789#"),
     ]
     
-    sample_artists = [
-          ("crust", "d1sRockaf00..."),
-          ("gerard", "Xx3ch33r5!xX"),
-          ("bobert", "camu5f@n1"),
+    sample_pieces = [
+          ("see nothing", "see nothing, say nothing, hear nothing"),
+          ("in my eyes", "its in my eyes, its in my eyes"),
+          ("eyes", "real eyes, realize, realize!"),
     ]
     
     
@@ -42,13 +42,13 @@ def seed_database():
             )
             print(f"Created users: {username}")
         
-        for name, word in sample_artists:
-            hashed_pw = bcrypt.hashpw(word.encode("utf-8"), bcrypt.gensalt())
+        for piecename, work in sample_pieces:
+            hashed_pw = bcrypt.hashpw(work.encode("utf-8"), bcrypt.gensalt())
             conn.execute(
-                "INSERT INTO artists (name, word) VALUES (?, ?)",
+                "INSERT INTO pieces (piecename, work) VALUES (?, ?)",
                 (name, hashed_pw)
             )
-            print(f"Created artists: {name}")
+            print(f"Created pieces: {piecename}")
         
         conn.commit()
         print("\nDatabase seeding complete!")

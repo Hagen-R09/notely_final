@@ -15,9 +15,9 @@ def init_db():
         )
     """)
     conn.execute("""
-        CREATE TABLE IF NOT EXISTS artists (
-            name TEXT PRIMARY KEY,
-            word TEXT
+        CREATE TABLE IF NOT EXISTS pieces (
+            piecename TEXT PRIMARY KEY,
+            work TEXT
         )
     """)
     conn.commit()
