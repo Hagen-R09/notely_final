@@ -14,7 +14,7 @@ from database import get_db, init_db
 import bcrypt
 
 def seed_database():
-    """Add sample artists to the database"""
+    """Add sample pieces to the database"""
     init_db()  # Ensure tables are created
     
     conn = get_db()
