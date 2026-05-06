@@ -83,24 +83,24 @@ def dashboard():
         return redirect(url_for("login"))
 
     # TODO: Connect to the database
-    # conn = get_db()
+    conn = get_db()
 
     # TODO: Get all entries that belong to the logged-in user
     # Example:
-    # entries = conn.execute(
-    #     "SELECT * FROM entries WHERE user=?",
+    pieces = conn.execute(
+         "SELECT * FROM pieces",
     #     (session["user"],)
-    # ).fetchall()
+     ).fetchall()
 
     # TODO: Close the connection
-    # conn.close()
+    conn.close()
 
     # TODO: Pass entries into your template
     # Example:
     # return render_template("dashboard.html", entries=entries, username=session["user"])
 
     # TEMPORARY (remove later)
-    return render_template("dashboard.html", username=session["user"])
+    return render_template("dashboard.html", pieces=pieces, username=session["user"])
 
 
 # ---------- CREATE ----------
@@ -121,7 +121,7 @@ def create():
 
         # TODO: Connect to database
 
-        # TODO: Insert into entries table
+        # TODO: Insert into pieces table
         # IMPORTANT: include session["user"]
 
         # TODO: Commit and close
