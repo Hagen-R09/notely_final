@@ -138,7 +138,6 @@ def create():
     return redirect(url_for("dashboard"))
 
     return render_template("create.html")
-"""
 
 # ---------- UPDATE ----------
 # TODO: Create a route like /edit/<id>
