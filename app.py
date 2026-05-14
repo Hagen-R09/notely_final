@@ -136,7 +136,7 @@ def create():
             conn.close()
 
         return redirect(url_for("dashboard"))
-
+        
     return render_template("create.html")
 
 
