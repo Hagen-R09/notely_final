@@ -110,23 +110,32 @@ def dashboard():
 # - Save data to the database (POST)
 # - Redirect back to dashboard
 # NOTE: Remove the triple """ before and after each route to 'uncomment'
-"""
+
 @app.route("/create", methods=["GET", "POST"])
 def create():
     if "user" not in session:
         return redirect(url_for("login"))
 
     if request.method == "POST":
-        # TODO: Get form data (title, content)
+        piecename = request.form["piecename"].strip()
+        work = request.form["work"].strip()
 
-        # TODO: Connect to database
+        conn = get_db()
+            
+        try:
+            conn.execute(
+                 "INSERT INTO works (piecename, work) VALUES (?, ?)",
+                (piecename, work)
+            )
+            conn.commit()
 
-        # TODO: Insert into pieces table
-        # IMPORTANT: include session["user"]
+            return redirect(url_for("dashboard"))
+        except:
+            conn.rollback()
+        finally:
+            conn.close()
 
-        # TODO: Commit and close
-
-        return redirect(url_for("dashboard"))
+    return redirect(url_for("dashboard"))
 
     return render_template("create.html")
 """
@@ -163,7 +172,7 @@ def edit(id):
         return redirect(url_for("dashboard"))
 
     return render_template("edit.html", entry=entry)
-"""
+
 
 # ---------- DELETE ----------
 # TODO: Create a route like /delete/<id>
