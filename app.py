@@ -124,7 +124,7 @@ def create():
             
         try:
             conn.execute(
-                 "INSERT INTO works (piecename, work) VALUES (?, ?)",
+                 "INSERT INTO pieces (piecename, work) VALUES (?, ?)",
                 (piecename, work)
             )
             conn.commit()
@@ -138,6 +138,7 @@ def create():
     return redirect(url_for("dashboard"))
 
     return render_template("create.html")
+
 
 # ---------- UPDATE ----------
 # TODO: Create a route like /edit/<id>
@@ -193,7 +194,7 @@ def delete(id):
 
     return redirect(url_for("dashboard"))
 """
-
+"""
 
 @app.route("/logout")
 def logout():
@@ -203,4 +204,3 @@ def logout():
 # ---------- RUN ----------
 if __name__ == "__main__":
     app.run(debug=True)
-"""
