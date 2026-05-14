@@ -137,7 +137,7 @@ def create():
 
         return redirect(url_for("dashboard"))
 
-        return render_template("create.html")
+    return render_template("create.html")
 
 
 # ---------- UPDATE ----------
