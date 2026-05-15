@@ -168,7 +168,7 @@ def edit(id):
         piecename = request.form["piecename"].strip()
         work = request.form["work"].strip()
         
-            if not piecename or not work
+        if not piecename or not work
                 error = "fields not found"
             else:
                 try:
