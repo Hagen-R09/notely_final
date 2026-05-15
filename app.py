@@ -147,12 +147,12 @@ def create():
 # - Show it in a form
 # - Update the database on submit
 
-"""
+
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
     if "user" not in session:
         return redirect(url_for("login"))
-
+        
     # TODO: Connect to database
 
     # TODO: Get entry WHERE id AND user
@@ -171,7 +171,7 @@ def edit(id):
 
         return redirect(url_for("dashboard"))
 
-    return render_template("edit.html", entry=entry)
+    return render_template("edit.html", entry = entry)
 
 
 # ---------- DELETE ----------
