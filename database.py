@@ -17,7 +17,7 @@ def init_db():
     conn.execute("""
         CREATE TABLE IF NOT EXISTS pieces (
             id INTEGER PRIMARY KEY AUTOINCREMENT
-            piecename TEXT KEY,
+            piecename TEXT,
             work TEXT
         )
     """)
