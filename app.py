@@ -165,21 +165,29 @@ def edit(id):
         return "Not allowed"
 
     if request.method == "POST":
-        piecename = request.form["piecename"]
-        work = request.form["work"]
+        piecename = request.form["piecename"].strip()
+        work = request.form["work"].strip()
+        
+            if not piecename or not work
+                error = "fields not found"
+            else:
+                try:
+                    conn.execute(
+                                "UPDATE pieces SET piecename=?, work=? WHERE id=?",
+                                (piecename, work, id)
+                                )
+                                conn.commit()
+                                conn.close()
+                                return redirect(url_for("dashboard"))
+                except:
+                    conn.rollback()
+                    conn.close()
+                    return "error updating piece"
 
-        conn.execute(
-            "UPDATE pieces SET piecename=?, work=? WHERE id=?",
-            (piecename, work, id)
-        )
-        conn.commit()
-        conn.close()
-
-        return redirect(url_for("dashboard"))
 
 
-    
-    return render_template_string(page, entry=entry)
+    conn.close()
+    return render_template(edit.html, entry=entry)
         
     # TODO: Connect to database
 
