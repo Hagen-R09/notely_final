@@ -156,7 +156,7 @@ def edit(id):
     conn = get_db()
 
     piece = conn.execute(
-        "SELECT * FROM pieces WHERE id=?,"
+        "SELECT * FROM pieces WHERE id=?",
         (id,)
     ).fetchone()
 
