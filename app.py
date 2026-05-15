@@ -187,7 +187,7 @@ def edit(id):
 
 
     conn.close()
-    return render_template(edit.html, piece=piece)
+    return render_template("edit.html", piece=piece)
         
     # TODO: Connect to database
 
