@@ -89,7 +89,7 @@ def dashboard():
     # Example:
     pieces = conn.execute(
          "SELECT * FROM pieces",
-         (session["user"],)
+        # (session["user"],)
      ).fetchall()
 
     # TODO: Close the connection
