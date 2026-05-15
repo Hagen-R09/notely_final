@@ -1,27 +1,20 @@
-<h2>Edit piece</h2>
-
-{% block content %}
-
 {% extends "base.html" %}
 
+{% block content %}
+<h2>Edit piece</h2>
 
 
-<!-- TODO: Create a form that sends a POST request -->
 
-page = f{base_style}
-    <div class="card">
-    <h2>Edit piece</h2>
-    <form method="POST">
-        <input name="piecename" value="{{ piece['piecename'] }}"><br>
-        <input name="work" value="{{ piece['work'] }}"><br>
-        <button type="submit">Update</button>
+
+
+
+<form method="POST">
+    <input name="piecename" placeholder="piecename" value="{{ piece['piecename'] }}"><br>
+    <input name="work" placeholder="work" value="{{ piece['work'] }}"><br>
+    <button type="submit">update</button>
+
     </form>
-    </div>
+    <a href="{{ url_for('dashboard') }}">back to dashboard</a>
 
-
-
-   
-
-<!-- TODO: Add a link back to dashboard -->
 
 {% endblock %}
