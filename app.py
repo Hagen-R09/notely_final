@@ -170,19 +170,19 @@ def edit(id):
         
         if not piecename or not work:
                 error = "fields not found"
-            else:
-                try:
-                    conn.execute(
-                                "UPDATE pieces SET piecename=?, work=? WHERE id=?",
-                                (piecename, work, id)
-                                )
-                                conn.commit()
-                                conn.close()
-                                return redirect(url_for("dashboard"))
-                except:
-                    conn.rollback()
-                    conn.close()
-                    return "error updating piece"
+        else:
+            try:
+                conn.execute(
+                    "UPDATE pieces SET piecename=?, work=? WHERE id=?",
+                    (piecename, work, id)
+                )
+                conn.commit()
+                conn.close()
+                return redirect(url_for("dashboard"))
+            except:
+                conn.rollback()
+                conn.close()
+                return "error updating piece"
 
 
 
