@@ -12,7 +12,7 @@ page = f{base_style}
     <div class="card">
     <h2>Edit piece</h2>
     <form method="POST">
-        <input name="title" value="{{ piece['piecename'] }}"><br>
+        <input name="piecename" value="{{ piece['piecename'] }}"><br>
         <input name="work" value="{{ piece['work'] }}"><br>
         <button type="submit">Update</button>
     </form>
