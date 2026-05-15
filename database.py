@@ -16,16 +16,10 @@ def init_db():
     """)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS pieces (
+            id INTEGER PRIMARY KEY AUTOINCREMENT
             piecename TEXT PRIMARY KEY,
             work TEXT
         )
     """)
-    conn.execute("""
-    CREATE TABLE IF NOT EXISTS pieces (
-        id INTEGER PRIMARY KEY AUTOINCREMENT
-        piecename TEXT,
-        work TEXT
-    )
-""")
     conn.commit()
     conn.close()
