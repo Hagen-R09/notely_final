@@ -155,37 +155,29 @@ def edit(id):
 
     conn = get_db()
 
-    entry = conn.execute(
-        "SELECT * FROM entries WHERE id=? AND user=?",
+    piece = conn.execute(
+        "SELECT * FROM pieces WHERE id=? AND user=?",
         (id, session["user"])
     ).fetchone()
 
-    if not entry:
+    if not piece:
         conn.close()
         return "Not allowed"
 
     if request.method == "POST":
-        title = request.form["title"]
-        content = request.form["content"]
+        piecename = request.form["piecename"]
+        work = request.form["work"]
 
         conn.execute(
             "UPDATE entries SET title=?, content=? WHERE id=?",
-            (title, content, id)
+            (piecename, work, id)
         )
         conn.commit()
         conn.close()
 
         return redirect(url_for("dashboard"))
 
-    page = f{base_style}
-    <div class="card">
-    <h2>Edit Entry</h2>
-    <form method="POST">
-        <input name="title" value="{{ entry['title'] }}"><br>
-        <input name="content" value="{{ entry['content'] }}"><br>
-        <button type="submit">Update</button>
-    </form>
-    </div>
+
     
     return render_template_string(page, entry=entry)
         
@@ -229,7 +221,6 @@ def delete(id):
     # TODO: Commit and close
 
     return redirect(url_for("dashboard"))
-"""
 """
 
 @app.route("/logout")
