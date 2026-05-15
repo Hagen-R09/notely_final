@@ -155,9 +155,9 @@ def edit(id):
 
     conn = get_db()
 
-    piece = conn.execute(
-        "SELECT * FROM pieces WHERE id=? AND user=?",
-        (id, session["user"])
+   # piece = conn.execute(
+       # "SELECT * FROM pieces WHERE id=? AND user=?",
+        #(id, session["user"])
     ).fetchone()
 
     if not piece:
@@ -189,7 +189,7 @@ def edit(id):
     # if not entry:
     #     return "Not allowed"
 
-    if request.method == "POST":
+    # if request.method == "POST":
         # TODO: Get updated form data
 
         # TODO: Update database
@@ -197,9 +197,9 @@ def edit(id):
 
         # TODO: Commit and close
 
-        return redirect(url_for("dashboard"))
+        #return redirect(url_for("dashboard"))
 
-    return render_template("edit.html", entry = entry)
+    #return render_template("edit.html", entry = entry)
 
 
 # ---------- DELETE ----------
