@@ -89,7 +89,7 @@ def dashboard():
     # Example:
     pieces = conn.execute(
          "SELECT * FROM pieces",
-    #     (session["user"],)
+         (session["user"],)
      ).fetchall()
 
     # TODO: Close the connection
@@ -155,9 +155,9 @@ def edit(id):
 
     conn = get_db()
 
-   # piece = conn.execute(
-       # "SELECT * FROM pieces WHERE id=? AND user=?",
-        #(id, session["user"])
+    piece = conn.execute(
+        "SELECT * FROM pieces WHERE id=?,"
+        (id,)
     ).fetchone()
 
     if not piece:
@@ -169,7 +169,7 @@ def edit(id):
         work = request.form["work"]
 
         conn.execute(
-            "UPDATE entries SET title=?, content=? WHERE id=?",
+            "UPDATE pieces SET piecename=?, work=? WHERE id=?",
             (piecename, work, id)
         )
         conn.commit()
