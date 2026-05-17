@@ -223,7 +223,7 @@ def delete(id):
 
     conn = get_db()
     piece = conn.execute(
-        "DELETE FROM pieces WHERE id=?",
+        "SELECT * FROM pieces WHERE id=?",
         (id,)
     ).fetchone()
 
