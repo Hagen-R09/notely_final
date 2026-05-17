@@ -169,7 +169,7 @@ def edit(id):
         work = request.form["work"].strip()
         
         if not piecename or not work:
-                error = "fields not found"
+            error = "fields not found"
         else:
             try:
                 conn.execute(
