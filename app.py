@@ -222,15 +222,31 @@ def delete(id):
         return redirect(url_for("login"))
 
     conn = get_db()
-    conn.execute(
-        "DELETE FROM entries WHERE id=? AND user=?",
-        (id, session["user"])
-    )
-    conn.commit()
+    piece = conn.execute(
+        "DELETE FROM pieces WHERE id=?",
+        (id,)
+    ).fetchone()
+
+    if not piece:
+        conn.close()
+        return "not found"
+    
+    if request.method == "POST":
+        try:
+            conn.execute(
+                "DELETE FROM pieces WHERE id=?",
+                (id,)
+            )
+            conn.commit()
+            except:
+                conn.rollback()
+            finally:
+                conn.close()
+            return redirect(url_for("dashboard"))
+
     conn.close()
-
-    return redirect(url_for("dashboard"))
-
+    return render_template("delete.html", piece=piece)
+   
     # TODO: Connect to database
 
     # TODO: Delete entry WHERE id AND user
