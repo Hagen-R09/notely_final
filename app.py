@@ -154,7 +154,6 @@ def edit(id):
         return redirect(url_for("login"))
 
     conn = get_db()
-
     piece = conn.execute(
         "SELECT * FROM pieces WHERE id=?",
         (id,)
@@ -162,7 +161,7 @@ def edit(id):
 
     if not piece:
         conn.close()
-        return "Not allowed"
+        return "does not exist"
 
     if request.method == "POST":
         piecename = request.form["piecename"].strip()
