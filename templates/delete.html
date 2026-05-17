@@ -3,14 +3,23 @@
 {% block content %}
 <h2>Delete Entry</h2>
 
+
 <!-- TODO: Ask user to confirm deletion -->
 
 <p>Are you sure you want to delete this entry?</p>
+
+<h3>{{ piece['piecename'] }}</h3>
+<p>{{ piece['work'] }}</p>
 
 <!-- TODO: Show entry title or content -->
 
 <!-- TODO: Add a button to confirm delete -->
 
+<form method="POST">
+    <button type-"submit" style-"background-color: grey; color: red;">Yes, Delete Piece</button>
+</form>
+
+<a href="{{ url_for('dashboard') }}">cancel</a>
 <!-- TODO: Add a cancel link back to dashboard -->
 
 {% endblock %}

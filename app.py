@@ -238,11 +238,11 @@ def delete(id):
                 (id,)
             )
             conn.commit()
-            except:
-                conn.rollback()
-            finally:
-                conn.close()
-            return redirect(url_for("dashboard"))
+        except:
+            conn.rollback()
+        finally:
+            conn.close()
+        return redirect(url_for("dashboard"))
 
     conn.close()
     return render_template("delete.html", piece=piece)
