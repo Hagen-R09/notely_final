@@ -216,11 +216,21 @@ def edit(id):
 # - Delete an entry from the database
 # - Redirect back to dashboard
 
-"""
+
 @app.route("/delete/<int:id>")
 def delete(id):
     if "user" not in session:
         return redirect(url_for("login"))
+
+    conn = get_db()
+    conn.execute(
+        "DELETE FROM entries WHERE id=? AND user=?",
+        (id, session["user"])
+    )
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for("dashboard"))
 
     # TODO: Connect to database
 
@@ -229,7 +239,7 @@ def delete(id):
     # TODO: Commit and close
 
     return redirect(url_for("dashboard"))
-"""
+
 
 @app.route("/logout")
 def logout():
