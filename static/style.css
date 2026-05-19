@@ -2,15 +2,15 @@ body {
     font-family: Arial, sans-serif;
     background: #000000;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: right;
     height: 100vh;
 }
 .card {
-    background: black;
+    background: rgb(55, 54, 54);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(255, 254, 254, 0.1);
     width: 300px;
     text-align: center;
 }
@@ -24,7 +24,7 @@ button {
     width: 60%;
     background: black;
     color: white;
-    border: none;
+    border: 40%;
 }
 .error {
     color: grey;
