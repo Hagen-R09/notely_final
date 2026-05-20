@@ -19,6 +19,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             piecename TEXT,
             work TEXT
+
         )
     """)
     conn.commit()
