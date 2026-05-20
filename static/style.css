@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: left;
     align-items: right;
-    height: 100vh;
+    height: 120vh;
 }
 .card {
     background: rgb(55, 54, 54);
