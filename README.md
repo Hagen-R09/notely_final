@@ -5,7 +5,7 @@
 When you finish, add your names and a demo video link here, then submit one link to your project repository.
 
 **Group Members:** (list all group members here)  
-* [Demo Video (1 per group)](http://includeyourlinkhere)
+* [Demo Video (1 per group)](https://www.canva.com/design/DAHKOXSC1mM/VfOMBrPEo2wTlfEQFQTgWA/edit?ui=e30)
 
 ---
 
